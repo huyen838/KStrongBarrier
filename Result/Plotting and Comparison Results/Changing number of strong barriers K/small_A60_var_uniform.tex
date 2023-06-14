@@ -1,0 +1,77 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\tikzset{every mark/.append style={solid}}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage[OT1]{fontenc}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\begin{document}
+\begin{tikzpicture}
+\pgfplotsset{set layers}
+\begin{axis}[
+%	scale only axis,
+	xlabel={Number of barriers $\mathsf{k}$},
+	ylabel={$\mathsf{N_m}$},
+	xtick={3, 4, 5, 6, 7},
+	minor y tick num=1,
+	minor x tick num=2,
+	xmajorgrids=true,
+	grid style=dashed,
+	legend cell align={left},
+	legend style={
+		at={(-0.1, 1.)},
+		draw=none,
+		anchor=south west,
+		font=\small
+	},
+]
+	\addplot+ [mark=*, line width=.7pt] table[x=K, y=A60NS50UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=50$, $\mathsf{N_m}$};
+	\addplot+ [mark=square*, line width=.7pt] table[x=K, y=A60NS80UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=80$, $\mathsf{N_m}$};
+	\addplot+ [mark=pentagon*, line width=.7pt] table[x=K, y=A60NS110UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=110$, $\mathsf{N_m}$};
+	\addplot+ [mark=triangle*, line width=.7pt, black, mark options={fill=gray, solid}] table[x=K, y=A60NS140UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=140$, $\mathsf{N_m}$};
+	\addplot+ [mark=star, line width=.7pt, green] table[x=K, y=A60NS170UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=170$, $\mathsf{N_m}$};
+	\addplot+ [mark=diamond*, line width=.7pt, violet!80!black, mark options={fill=violet, solid}, solid] table[x=K, y=A60NS200UniformNumber] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=200$, $\mathsf{N_m}$};
+\end{axis}
+\begin{axis}[
+%	scale only axis,
+%	xlabel={Number of static sensors},
+	ylabel={Computational time (ms)},
+	xtick={3, 4, 5, 6, 7},
+	ytick distance={1000},
+	minor x tick num=2,
+	xmajorgrids=true,
+	grid style=dashed,
+	axis y line*=right,
+	axis x line=none,
+	legend cell align={left},
+	legend style={
+		at={(1.1,1.)},
+		draw=none,
+		anchor=south east,
+		font=\small
+	},
+]
+%	\addlegendimage{/pgfplots/refstyle=uniformNumber}\addlegendentry{uniform, $\mathsf{N_m}$};
+%	\addlegendimage{/pgfplots/refstyle=gaussNumber}\addlegendentry{gauss, $\mathsf{N_m}$};
+%	\addlegendimage{/pgfplots/refstyle=exponentialNumber}\addlegendentry{exponential, $\mathsf{N_m}$};
+	\addplot+ [densely dashed, mark=*, line width=.7pt] table[x=K, y=A60NS50UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=50$, computational time};
+	\addplot+ [densely dashed, mark=square*, line width=.7pt] table[x=K, y=A60NS80UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=80$, computational time};
+	\addplot+ [densely dashed, mark=pentagon*, line width=.7pt] table[x=K, y=A60NS110UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=110$, computational time};
+	\addplot+ [densely dashed, mark=triangle*, line width=.7pt, black, mark options={solid, fill=gray}] table[x=K, y=A60NS140UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=140$, computational time};
+	\addplot+ [densely dashed, mark=star, line width=.7pt, green] table[x=K, y=A60NS170UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=170$, computational time};
+	\addplot+ [densely dashed, mark=diamond*, line width=.7pt, violet!80!black, mark options={fill=violet, solid}, ] table[x=K, y=A60NS200UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{$\mathsf{NS}=200$, computational time};
+\end{axis}
+\end{tikzpicture}
+\end{document}

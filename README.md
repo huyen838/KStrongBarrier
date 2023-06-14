@@ -11,7 +11,6 @@ The data files are named based on specific parameters: the number of stationary 
 The data files within the "W100-H020" folders correspond to small-scale networks, while the data files within the "W500-H100" folders correspond to large-scale networks.
 
 Each .txt file within the dataset contains detailed information about a specific network configuration. The first line of each file provides the width, height of the Region of Interest (RoI), and the total number of stationary sensors, presented in that respective order. 
-
 The subsequent $NS$ lines in the file correspond to each individual sensor within the network. Each line contains information about the sensor's position, radius, half of the sensing angle, and orientation angle. These details provide a comprehensive description of the sensor's characteristics within the network configuration.
 
 The "Visualization" folder presents some visualization of some example networks.

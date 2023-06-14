@@ -1,0 +1,36 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgf,tikz,pgfplots}
+\usetikzlibrary{quotes, angles}
+\usepackage{arev}
+
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}
+\draw (0,0) -- (18,0) -- (18,8) -- (0, 8) -- cycle;
+%\draw[fill=blue, fill opacity=.2] (2.25, 1.3333333333333333) -- + (5.839060444949439:2) arc(5.839060444949439:95.83906044494944:2) -- cycle;
+\draw[fill=blue, fill opacity=.2] (0.95, 6.22) -- + (220:1.5) arc (220:290:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (1.11, 5.46) -- + (-50:1.5) arc (-50:30:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (3.66, 4.72) -- + (150:1.5) arc (150:270:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (5.05, 7.07) -- + (150:1.5) arc (150:270:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (4.71, 3.04) -- + (75:1.5) arc (75:180:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (7, 3.14) -- + (150:1.5) arc (150:210:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (5.01, 3.81) -- + (-20:1.5) arc (-20:120:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (8.46, 5.49) -- + (130:1.5) arc (130:230:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (10.57, 6.33) -- + (190:1.5) arc (190:330:1.5) -- cycle;
+%\draw[fill=blue, fill opacity=.2] (11.35, 4.1) -- + (190:1.5) arc (190:250:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (11.59, 1.53) -- + (-10:1.5) arc (-10:90:1.5) -- cycle;
+%\draw[fill=blue, fill opacity=.2] (11.82, 2.68) -- + (100:1.5) arc (100:170:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (9.36, 5.05) -- + (60:1.5) arc (60:160:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (6.47, 4.92) -- + (55:1.5) arc (55:175:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (9.71, 4.34) -- + (60:1.5) arc (60:150:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (8.97, 3.92) -- + (-40:1.5) arc (-40:60:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (14.14, 1.18) -- + (30:1.5) arc (30:170:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (15.87, 3.14) -- + (80:1.5) arc (80:210:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (17.2, 4.97) -- + (200:1.5) arc (200:330:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (14.29, 6.39) -- + (250:1.5) arc (250:350:1.5) -- cycle;
+\draw[fill=blue, fill opacity=.2] (13.8, 3.2) -- + (150:1.5) arc (150:200:1.5) -- cycle;
+%======
+\draw [dash pattern=on 3pt off 1.5pt, line width=1.pt, ->] (9.21923, -.54) .. controls (12, 2.75163) and (11.9782, 6.33819) .. (13.6411, 8.68091);
+\draw [dash pattern=on 3pt off 1.5pt, ->, line width=1.pt, color=blue!60] (11.5, -.54) -- (11.5,8.6);
+\end{tikzpicture}
+\end{document}

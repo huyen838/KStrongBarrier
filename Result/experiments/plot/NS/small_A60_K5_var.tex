@@ -1,0 +1,68 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\tikzset{every mark/.append style={solid}}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage[OT1]{fontenc}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\begin{document}
+\begin{tikzpicture}
+\pgfplotsset{set layers}
+\begin{axis}[
+%	scale only axis,
+	xlabel={Number of static sensors},
+	ylabel={$\mathsf{N_m}$},
+	xtick={50, 80, 110, 140, 170, 200},
+	minor y tick num=1,
+	minor x tick num=2,
+	xmajorgrids=true,
+	grid style=dashed,
+	legend cell align={left},
+	legend style={
+		at={(-0.1, 1.)},
+		draw=none,
+		anchor=south west,
+		font=\small
+	},
+]
+	\addplot+ [mark=*, line width=.7pt] table[x=NS, y=A60K5UniformNumber] {data/resultSmallGA.dat};
+	\label{uniformNumber};
+	\addlegendentry{Uniform, $\mathsf{N_m}$};
+	\addplot+ [mark=square*, line width=.7pt] table[x=NS, y=A60K5GaussNumber] {data/resultSmallGA.dat};
+	\label{gaussNumber};
+	\addlegendentry{Gauss, $\mathsf{N_m}$};
+	\addplot+ [mark=pentagon*, line width=.7pt] table[x=NS, y=A60K5ExponentialNumber] {data/resultSmallGA.dat};
+	\label{exponentialNumber};
+	\addlegendentry{Exponential, $\mathsf{N_m}$};
+\end{axis}
+\begin{axis}[
+%	scale only axis,
+	xlabel={Number of static sensors},
+	ylabel={Computational time (ms)},
+	xtick={50, 80, 110, 140, 170, 200},
+%	minor y tick num=1,
+	ytick distance={1000},
+	minor x tick num=2,
+	xmajorgrids=true,
+	grid style=dashed,
+	axis y line*=right,
+	axis x line=none,
+	legend cell align={left},
+	legend style={
+		at={(1.2,1.)},
+		draw=none,
+		anchor=south east,
+		font=\small
+	},
+]
+%	\addlegendimage{/pgfplots/refstyle=uniformNumber}\addlegendentry{uniform, $\mathsf{N_m}$};
+%	\addlegendimage{/pgfplots/refstyle=gaussNumber}\addlegendentry{gauss, $\mathsf{N_m}$};
+%	\addlegendimage{/pgfplots/refstyle=exponentialNumber}\addlegendentry{exponential, $\mathsf{N_m}$};
+	\addplot+ [densely dashed, mark=*, line width=.7pt] table[x=NS, y=A60K5UniformTime] {data/resultSmallGA.dat};
+	\addlegendentry{Uniform, computational time};
+	\addplot+ [densely dashed, mark=square*, line width=.7pt] table[x=NS, y=A60K5GaussTime] {data/resultSmallGA.dat};\addlegendentry{Gauss, computational time};
+	\addplot+ [densely dashed, mark=pentagon*, line width=.7pt] table[x=NS, y=A60K5ExponentialTime] {data/resultSmallGA.dat};
+	\addlegendentry{Exponential, computational time};	
+\end{axis}
+\end{tikzpicture}
+\end{document}

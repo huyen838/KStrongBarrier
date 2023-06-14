@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input-format>
+    <param-line id="param-line">
+        <seperator id="param-line-seperator">32</seperator>
+        <param>
+            <name>width</name>
+            <symbol>W</symbol>
+            <value>100</value>
+            <exclude></exclude>
+        </param>
+        <param>
+            <name>height</name>
+            <symbol>H</symbol>
+            <value>20</value>
+            <exclude></exclude>
+        </param>
+        <param>
+            <name>number-of-static-sensors</name>
+            <symbol>NS</symbol>
+            <range>50 80 110 140 170 200</range>
+        </param>
+        <param>
+            <name>alpha</name>
+            <symbol>A</symbol>
+            <range>60 180</range>
+        </param>
+    </param-line>
+    <sensor-info>
+        <seperator>32</seperator>
+        <attribute>
+            <name>x-coordinate</name>
+            <symbol>x</symbol>
+            <normaldis>20 50</normaldis>
+        </attribute>
+        <attribute>
+            <name>y-coordinate</name>
+            <symbol>y</symbol>
+            <bound>0 20</bound>
+        </attribute>
+        <attribute>
+            <name>radius</name>
+            <symbol>r</symbol>
+            <value>2</value>
+        </attribute>
+        <attribute>
+            <name>alpha</name>
+            <symbol>a</symbol>
+            <concrete></concrete>
+        </attribute>
+        <attribute>
+            <name>beta</name>
+            <symbol>b</symbol>
+            <bound>0 360</bound>
+        </attribute>
+    </sensor-info>
+</input-format>
